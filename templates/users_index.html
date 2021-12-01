@@ -1,0 +1,25 @@
+<!-- templates/users_index.html -->
+
+{% extends 'base.html' %}
+
+{% block content %}
+<h4>Administrative Dashboard</h4>
+
+<div class ='row'>
+    {% for user in users %}
+        <div class='col-md-3 card border-primary mb-3" style="margin:15px; min-height:200px;'>
+            <h4 class='card-header'><a href='/users/{{ user._id }}'>{{ user.username }}</a></h4>            
+                <p class='card-title'>Full Name: {{ user.name }}</p>      
+        </div>    
+    {% endfor %}        
+</div>
+<a href='/users/new' class='btn btn-primary' style="color:rgb(255, 255, 255); margin-top:20px;">New User</a>
+{% endblock %}
+
+
+<!-- <div class='col-md-3 card border-primary mb-3" style="margin:15px; min-height:200px;'>
+    <h4 class='card-title'><a href='/users/{{ user._id }}'>{{ user.username }}</a></h4>
+    <p class='card-text'><small>{{ user.name }}</small></p>
+    <p class='card-text'><small>Total Donated: $</small></p>
+    <p class='card-text'><small>Impact Score: </small></p>
+</div>   -->

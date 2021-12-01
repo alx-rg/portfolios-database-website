@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% include 'partials/navuser.html' %}
+<div class="container mt-3">
+    <div class='d-flex'>
+      <h2 class="mb-4">{{ user.name }}</h2>
+    </div>
+    <h5>Username: {{ user.username }}</h5>
+    <h4>Total Donated: ${{ user.total_given}}</h4>
+
+
+        <div class='row-md-1' style="width: 40%; min-width: 450px; border-top: 1px solid grey;">
+            {% include 'partials/donation_form.html' %}
+        </div>  
+        
+        <div class="row row-cols-2 row-cols-2 row-cols-2 mt-2" style="border-top: 1px solid grey;">
+            <div class="col-12 col-lg-6">
+              <!-- DONATIONS MADE -->
+              <h4>Donations for {{ user.name }}</h4>
+              <div class="row row-cols-2 row-cols-2 row-cols-2 mt-2" style='margin-top: 10px;'>
+                {% for donation in donations %}
+                    {% include 'partials/donation.html' %}
+                {% endfor %}
+              </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
+

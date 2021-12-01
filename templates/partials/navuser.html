@@ -1,0 +1,21 @@
+<!-- templates/partials/navuser.html -->
+
+<nav style="background-color: white; margin-top: 10px;">
+  <div>
+      <div class='btn-group'>
+      
+      <form action='/' style='margin-right: 10px;'>
+          <button class='btn btn-primary' type='submit'>Home</button>
+      </form>
+      
+      <form action='/users/{{ user._id }}/edit' style='margin-right: 10px;'>
+          <button class='btn btn-secondary' type='submit'>Edit User</button>
+      </form>
+
+      <form method='POST' action='/users/{{user._id}}/delete' onclick="return confirm('Are you sure you want to delete this User?')">
+          <button class='btn btn-danger' type='submit'>Delete User</button>
+      </form>
+
+      </div>
+  </div>
+</nav>

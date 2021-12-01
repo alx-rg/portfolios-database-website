@@ -1,0 +1,17 @@
+<!-- templates/users.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+{% include 'partials/navuser.html' %}
+<div class='row'>
+    <div class='col-sm-6 col-sm-offset-3'>
+        <form method='POST' action='/users/{{ user._id }}'>
+            {% include 'partials/users_form.html' %}
+            <!-- BUTTON -->
+            <div class='form-group'>
+                <button class='btn btn-primary' type='submit'>Save User</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

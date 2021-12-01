@@ -1,0 +1,13 @@
+<!-- templates/partials/donation.html -->
+<div class='row-md-1'>
+  <div class='col-md-15 card border-primary mb-2'>
+      <h4>&nbsp;{{ donation.charity }}</h4>
+      <h5>&nbsp;${{ donation.amount }}</h5>
+      <p>&nbsp;{{ donation.date }}</p>
+      <div class='col-1'><form method='POST' action='/users/donations/{{ donation._id }}'>
+        <input type='hidden' value='{{ user._id }}' name='user_id'/>
+        <button class='badge rounded-pill bg-danger' type='submit' onclick="return confirm('Delete Donation?')">Delete</button>
+    </form></div>
+  </div>
+</div>
+

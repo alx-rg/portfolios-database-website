@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form method='POST' action='/charities'>
+  <fieldset>
+    <legend>New Charity</legend>
+    <p>
+      <label for='title'>Charity Name</label><br>
+      <input type='text' name='title'/>
+    </p>
+    <p>
+      <label for='information'>Charity Information</label><br>
+      <input type='text' name='information'/>
+    </p>
+    <p>
+      <label for='impact'>Impact Score Per 1$ Given</label><br>
+      <select name='impact'>
+          <option value='3'>Most Impact</option>
+          <option value='2'>Medium Impact</option>
+          <option value='1'>Low Impact</option>
+      </select>
+    </p>
+  </fieldset>
+  <p>
+    <button type='submit'>Upload Charity</button>
+  </p>
+</form>
+{% endblock %}
