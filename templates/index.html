@@ -8,11 +8,16 @@
 
     <!-- Start Home -->
     
-    <section class="bg-home d-flex align-items-center" style="min-height: 70vh; margin-top: 25%;" id="home">
+    <section class="bg-home d-flex align-items-center" style="min-height: 70vh; margin-top: 15%; background: url('../static/unsplash.jpg') center center;" id="home">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-lg-12">
+                
+                <div class="col-lg-12 justify-content-center">
                     <div class="text-left" style='margin-left: 5%;'>
+                        <h1 class="heading mb-3">In the job market?</h1>
+                        <div class="home-dashboard text-center">
+                            <img src='{{url_for("static", filename="florianklauer.jpg")}}' style='width: 100%' alt="Businesswoman Standing with a tablet" >
+                        </div>
                         <h1 class="heading mb-3">A Powerfully Simple Portfolio</h1>
                         <h5 class="text-muted mx-auto mb-0">Save Their Time & Your's. Make a Resume. Get Hired</h5>
                     
@@ -23,9 +28,7 @@
                     <div class="home-dashboard text-center">
                         <img src="../images/laptop.png" alt="" class="img-fluid">
                     </div>
-                    <div class="home-dashboard text-center">
-                        <img src='{{url_for("static", filename="florianklauer.jpg")}}' style='width: 100%' alt="Businesswoman Standing with a tablet" >
-                    </div>
+
                 </div><!--end col-->
             </div><!--end row-->
         </div><!--end container-->
@@ -194,20 +197,22 @@
                                     <li class="pricing-features-item">One Portfolio</li>
                                     <li class="pricing-features-item">Limited Projects</li>
                                     <li class="pricing-features-item">Limited Articles</li>
+                                    <li class="pricing-features-item">Generic Styling</li>
                                 </ul>
                                 <h4 class="pricing-rate my-4">Free</h4>
                                 <a href="#" class="btn btn-pills btn-outline-primary">Sign In</a>
                             </div>
                         </div><!--end col-->
 
-                        <div class="col-md-4 py-4 bg-primary rounded-pill">
+                        <div class="col-md-4 py-4 bg-primary rounded-pill rounded shadow">
                             <div class="pricing-plan business-plan px-md-5 px-4 pb-4 borders text-center">
                                 <img src="images/illu/business.svg" alt="" class="avatar avatar-medium">
                                 <h4 class="my-4 font-weight-bold text-white">Gold</h4>
                                 <ul class="pricing-features text-light list-unstyled">
                                     <li class="pricing-features-item">5 Portfolios</li>
-                                    <li class="pricing-features-item">2 Resume Styles</li>
+                                    <li class="pricing-features-item">5 Resume Styles</li>
                                     <li class="pricing-features-item">Unlimited Projects</li>
+                                    <li class="pricing-features-item">Unlimited Articles</li>
                                 </ul>
                                 <h4 class="text-white my-4 pricing-rate">$ 3 / Month</h4>
                                 <h4 class="text-white my-4 pricing-rate">$ 30 / Year</h4>
@@ -221,9 +226,10 @@
                                 <img src="images/illu/enterprise.svg" alt="" class="avatar avatar-medium">
                                 <h4 class="my-4 font-weight-bold">Platinum</h4>
                                 <ul class="pricing-features text-muted list-unstyled">
-                                    <li class="pricing-features-item">Email Support</li>
-                                    <li class="pricing-features-item">Unlimited Resume Styles</li>
+                                    <li class="pricing-features-item">24/7 Email Support</li>
                                     <li class="pricing-features-item">Unlimited Portfolios</li>
+                                    <li class="pricing-features-item">Personalized Input</li>
+                                    <li class="pricing-features-item">Professional Reviews</li>
                                 </ul>
                                 <h4 class="pricing-rate my-4">$ 10 / Month</h4>
                                 <h4 class="pricing-rate my-4">$ 89 / Year</h4>
@@ -284,8 +290,9 @@
                         </div>
                         <div class="content mt-4">
                             <h6 class="title text-uppercase font-weight-bold">Location</h6>
-                            <p class="text-muted">C/54 Northwest Freeway, Suite 558, <br>Houston, USA 485</p>
-                            <a href="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d6030.418742494061!2d-111.34563870463673!3d26.01036670629853!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2smx!4v1471908546569" class="video-play-icon text-primary">View on Google map</a>
+                            <p class="text-muted">Porfolio Tower, <br>1010 Main St, Suite 558, <br>Vancouver, Canada</p>
+                            <a href="https://g.page/MOAUBC?share"  rel="noopener noreferrer nofollow" 
+                                target="_blank"class="text-primary">View on Google map</a>
                         </div>  
                     </div>
                 </div><!--end col-->
