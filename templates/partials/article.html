@@ -1,0 +1,14 @@
+<!-- templates/partials/article.html -->
+<div class='row-md-1'>
+  <div class='col-md-15 card border-primary mb-2'>
+      <h4>&nbsp;{{ article.name }}</h4>
+      <h5>&nbsp;${{ article.description }}</h5>
+      <p>&nbsp;{{ article.date }}</p>
+      <div class='col-1'><form method='POST' action='/users/articles/{{ article._id }}'>
+        <input type='hidden' value='{{ user._id }}' name='user_id'/>
+        <button class='badge rounded-pill bg-danger' type='submit' onclick="return confirm('Delete article?')">Delete</button>
+    </form></div>
+  </div>
+</div>
+
+

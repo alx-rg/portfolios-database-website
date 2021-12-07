@@ -1,0 +1,13 @@
+<!-- templates/partials/project.html -->
+<div class='row-md-1'>
+  <div class='col-md-15 card border-primary mb-2'>
+      <h4>&nbsp;{{ project.name }}</h4>
+      <h5>&nbsp;${{ project.description }}</h5>
+      <p>&nbsp;{{ project.date }}</p>
+      <div class='col-1'><form method='POST' action='/users/projects/{{ project._id }}'>
+        <input type='hidden' value='{{ user._id }}' name='user_id'/>
+        <button class='badge rounded-pill bg-danger' type='submit' onclick="return confirm('Delete Project?')">Delete</button>
+    </form></div>
+  </div>
+</div>
+

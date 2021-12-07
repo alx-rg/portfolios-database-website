@@ -12,6 +12,9 @@
                 <button class='btn btn-primary' type='submit'>Save User</button>
             </div>
         </form>
+        <form method='POST' action='/users/{{user._id}}/delete' onclick="return confirm('Are you sure you want to delete this User?')">
+            <button class='btn btn-danger' type='submit'>Delete User</button>
+        </form>
     </div>
 </div>
 {% endblock %}

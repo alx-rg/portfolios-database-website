@@ -1,0 +1,342 @@
+{% extends 'base_no_nav.html' %}
+
+{% block title %}
+<title>Simply Portfolio</title>
+{% endblock %}
+
+{% block content %}
+
+    <!-- Start Home -->
+    
+    <section class="bg-home d-flex align-items-center" style="min-height: 70vh; margin-top: 25%;" id="home">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-12">
+                    <div class="text-left" style='margin-left: 5%;'>
+                        <h1 class="heading mb-3">A Powerfully Simple Portfolio</h1>
+                        <h5 class="text-muted mx-auto mb-0">Save Their Time & Your's. Make a Resume. Get Hired</h5>
+                    
+                        <div class="mt-4">
+                            <a href="#about" class="btn btn-pills btn-primary mb-2">How you ask?</a>
+                        </div>
+                    </div>
+                    <div class="home-dashboard text-center">
+                        <img src="../images/laptop.png" alt="" class="img-fluid">
+                    </div>
+                    <div class="home-dashboard text-center">
+                        <img src='{{url_for("static", filename="florianklauer.jpg")}}' style='width: 100%' alt="Businesswoman Standing with a tablet" >
+                    </div>
+                </div><!--end col-->
+            </div><!--end row-->
+        </div><!--end container-->
+    </section><!--end section-->
+    <!-- End Home -->
+    <div class="mt-4 text-center">
+        <a href="#about" class="btn btn-outline-dark btn-lg" style="border-radius: 10px;">Get Started Now</a>
+    </div>
+    
+    
+    <!-- Services Start -->
+    <section class="section" style="min-height: 75vh;" id="features">
+    <div class="container">
+        <div class="row justify-content-center" style='margin-top: 100px;'>
+            <div class="col-12">
+                <div class="section-title text-center mb-4 pb-2">
+                    <h4 class="title mb-4">Our Features</h4>
+                    <p class="text-muted mx-auto mb-0">Simply Portfolio is meant to save you time. How? Enter some details about yourself, your projects and your best articles. Take that sweet sweet link and send it to recruiters, add it to your social media profiles.</p>
+                </div>
+            </div><!--end col-->
+        </div><!--end row-->
+
+        <div class="row">
+            <div class="col-lg-4 col-md-6 col-12 mt-4 pt-2">
+                <div class="card service-wrapper rounded border-1 shadow px-4 py-5">
+                    <div class="icon text-center text-primary h1 shadow rounded bg-white">
+                        <i class="uim uim-airplay"></i>
+                    </div>
+                    <div class="content mt-4">
+                        <h5 class="title">Modern Workflow</h5>
+                        <p class="text-muted mt-3 mb-0">Keeping it fast and efficient, there's no extra fluff to take away from your skills so recuiters don't waste time</p>
+                        <div class="mt-3">
+                            <a href="#" class="text-primary">Read More</a>
+                        </div>
+                    </div>
+                    <div class="big-icon h1 text-primary">
+                        <i class="uim uim-airplay icons"></i>
+                    </div>
+                </div>
+            </div><!--end col-->
+
+            <div class="col-lg-4 col-md-6 col-12 mt-4 pt-2">
+                <div class="card service-wrapper rounded border-1 shadow px-4 py-5">
+                    <div class="icon text-center text-primary h1 shadow rounded bg-white">
+                        <i class="uim uim-circle-layer"></i>
+                    </div>
+                    <div class="content mt-4">
+                        <h5 class="title">Fully Responsive</h5>
+                        <p class="text-muted mt-3 mb-0">Create, Read, Edit all in the palm of your hand or on the big screen. Whichever, your portfolio will look stellar</p>
+                        <div class="mt-3">
+                            <a href="#" class="text-primary">Read More</a>
+                        </div>
+                    </div>
+                    <div class="big-icon h1 text-primary">
+                        <i class="uim uim-circle-layer icons"></i>
+                    </div>
+                </div>
+            </div><!--end col-->
+            
+            <div class="col-lg-4 col-md-6 col-12 mt-4 pt-2">
+                <div class="card service-wrapper rounded border-1 shadow px-4 py-5">
+                    <div class="icon text-center text-primary h1 shadow rounded bg-white">
+                        <i class="uim uim-signal-alt-3"></i>
+                    </div>
+                    <div class="content mt-4">
+                        <h5 class="title">Minimalism Feast</h5>
+                        <p class="text-muted mt-3 mb-0">Simple and Clean, this layout is all about speed and beauty. Everything important up front, nothing less</p>
+                        <div class="mt-3">
+                            <a href="#" class="text-primary">Read More</a>
+                        </div>
+                    </div>
+                    <div class="big-icon h1 text-primary">
+                        <i class="uim uim-signal-alt-3 icons"></i>
+                    </div>
+                </div>
+            </div><!--end col-->
+        </div><!--end row-->
+    </div><!--end container-->
+    </section>
+    <!-- Services End -->
+
+
+
+    <section class="section bg-light" style="min-height: 100vh;" id="about">
+        <div class="row justify-content-center" style="margin-top: 100px;">
+            <div class="col-12">
+                <div class="section-title text-center mb-4 pb-2">
+                    <h4 class="title mb-4">About Us</h4>
+                    <p class="text-muted">Our team of experienced recruiters and software developpers came together to create a better way. 
+                        Don't waste your time pixel-pushing your own "resume" or "portfolio", get it done quickly and get back to working on your projects. That's where you'll shine and That's how you'll get hired. </p>
+                </div>
+            </div><!--end col-->
+        </div><!--end row-->
+    <div class="container mt-100 mt-60">
+        <div class="row align-items-center">
+            <div class="col-lg-6 col-md-6">
+                <div class="ml-lg-5">
+                    <img src='{{url_for("static", filename="Businesswoman.png")}}' style='width: 100%' alt="Businesswoman Standing with a tablet" >
+                </div>
+            </div><!--end col-->
+
+            <div class="col-lg-6 col-md-6 mt-4 mt-sm-0 pt-2 pt-sm-0" >
+                <div class="section-title">
+                    <h2 class="text-primary">
+                        <i class="uim uim-google-play"></i>
+                    </h2>
+                    <h4 class="title mt-3 mb-4">Ultimate features <br> custom built for you</h4>
+                    <p class="text-muted">All the information you'll need to get hired in one easy to read package.</p>
+                    <ul class="list feature-list text-muted">
+                        <li class="mt-2">Create tailored portfolios</li>
+                        <li class="mt-2">Link all your GitHub Projects</li>
+                        <li class="mt-2">Easily share</li>
+                    </ul>
+                    <a href="#" class="mt-3 text-primary">Find Out More</a>
+                </div>
+            </div><!--end col-->
+        </div><!--end row-->
+    </div><!--end container-->
+
+        <div class="container mt-100 mt-60">
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-md-6 order-1 order-md-2">
+                    <div class="ml-lg-5">
+                        <img src='{{url_for("static", filename="Businessman.png")}}' style='width: 100%' alt="Businessman Sitting in a Chair with a Money Poster">
+                    </div>
+                </div><!--end col-->
+
+                <div class="col-lg-6 col-md-6 order-2 order-md-1 mt-4 mt-sm-0 pt-2 pt-sm-0">
+                    <div class="section-title">
+                        <h2 class="text-primary">
+                            <i class="uim uim-google-drive"></i>
+                        </h2>
+                        <h4 class="title mt-3 mb-4">Designed & Styled <br> with the latest integration</h4>
+                        <p class="text-muted">What we often hear from recruiters is: "why do all these resumes have random styling, and why the terrible fonts??? Arrrrgh my eyes!" 
+                            In fact most recruiters don't want to bother with weird or funky portfolios that take too long to read, they just DON'T HAVE THE TIME. These templates have been 
+                            vetted and approved by recruiters in all the big companies, so stop wasting your time, and just join already.</p>
+                        <div class="mt-4">
+                            <a href="#" class="btn btn-pills btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div><!--end col-->
+            </div><!--end row-->
+        </div><!--end container-->
+    </section><!--end section-->
+
+    <!-- Start Pricing -->
+    <section class="section" style="min-height: 50vh; margin-top: 100px;" id="pricing">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12">
+                    <div class="section-title text-center mb-4 pb-2">
+                        <h4 class="title mb-4">Pricing Plans</h4>
+                        <p class="text-muted para-desc mx-auto mb-0">We're here to get you hired, and once your hired, we'll keep your resume up-to-date so that when you want to get an even better position, they'll come calling to you</p>
+                    </div>
+                </div><!--end col-->
+            </div><!--end row-->
+
+            <div class="row no-gutters mt-4 pt-2">
+                <div class="col-12 rounded shadow">
+                    <div class="row align-items-center no-gutters pricing-table">
+                        <div class="col-md-4 py-4">
+                            <div class="pricing-plan px-md-5 px-4 pb-4 borders text-center">
+                                <img src="images/illu/free.svg" alt="" class="avatar avatar-medium">
+                                <h4 class="my-4 font-weight-bold">Bronze</h4>
+                                <ul class="pricing-features text-muted list-unstyled">
+                                    <li class="pricing-features-item">One Portfolio</li>
+                                    <li class="pricing-features-item">Limited Projects</li>
+                                    <li class="pricing-features-item">Limited Articles</li>
+                                </ul>
+                                <h4 class="pricing-rate my-4">Free</h4>
+                                <a href="#" class="btn btn-pills btn-outline-primary">Sign In</a>
+                            </div>
+                        </div><!--end col-->
+
+                        <div class="col-md-4 py-4 bg-primary rounded-pill">
+                            <div class="pricing-plan business-plan px-md-5 px-4 pb-4 borders text-center">
+                                <img src="images/illu/business.svg" alt="" class="avatar avatar-medium">
+                                <h4 class="my-4 font-weight-bold text-white">Gold</h4>
+                                <ul class="pricing-features text-light list-unstyled">
+                                    <li class="pricing-features-item">5 Portfolios</li>
+                                    <li class="pricing-features-item">2 Resume Styles</li>
+                                    <li class="pricing-features-item">Unlimited Projects</li>
+                                </ul>
+                                <h4 class="text-white my-4 pricing-rate">$ 3 / Month</h4>
+                                <h4 class="text-white my-4 pricing-rate">$ 30 / Year</h4>
+                                <a href="#" class="btn btn-pills btn-light">Buy Now</a>
+                                <p class="text-light mt-3 mb-0">Or Start 14 Days Trial</p>
+                            </div>
+                        </div><!--end col-->
+
+                        <div class="col-md-4 py-4">
+                            <div class="pricing-plan px-md-5 px-4 text-center">
+                                <img src="images/illu/enterprise.svg" alt="" class="avatar avatar-medium">
+                                <h4 class="my-4 font-weight-bold">Platinum</h4>
+                                <ul class="pricing-features text-muted list-unstyled">
+                                    <li class="pricing-features-item">Email Support</li>
+                                    <li class="pricing-features-item">Unlimited Resume Styles</li>
+                                    <li class="pricing-features-item">Unlimited Portfolios</li>
+                                </ul>
+                                <h4 class="pricing-rate my-4">$ 10 / Month</h4>
+                                <h4 class="pricing-rate my-4">$ 89 / Year</h4>
+                                <a href="#" class="btn btn-pills btn-primary">Buy Now</a>
+                                <p class="text-muted mt-3 mb-0">Or Start 14 Days Trial</p>
+                            </div>
+                        </div><!--end col-->
+                    </div><!--end row-->
+                </div><!--end col-->
+            </div><!--end row-->
+        </div><!--end container-->
+    </section><!--end section-->
+    <!-- Start Pricing -->
+    
+    <!-- Start Contact -->
+    <section class="section" style="min-height: 50vh; margin-top: 200px;" id="contact">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12">
+                    <div class="section-title text-center mb-4 pb-2">
+                        <h4 class="title mb-4">Contact us</h4>
+                        <p class="text-muted">There's plenty of ways you can get a hold of us. And there's plenty of reasons you might have to. So call, email or come in with some extra coffees and we can talk about your goals, passions or hobbies.</p>
+                    </div>
+                </div><!--end col-->
+            </div><!--end row-->
+
+            <div class="row">
+                <div class="col-md-4 mt-4 pt-2">
+                    <div class="contact-detail text-center">
+                        <div class="icon">
+                            <img src='{{url_for("static", filename="search.png")}}' style='width: 30px;'>
+                        </div>
+                        <div class="content mt-4">
+                            <h6 class="title">Phone</h6>
+                            <p class="text-muted">Get a hold of someone real quick so that you can get back to working on your projects</p>
+                            <a href="tel:1.534.468.4854" class="text-primary">1.534.468.4854</a>
+                        </div>  
+                    </div>
+                </div><!--end col-->
+                
+                <div class="col-md-4 mt-4 pt-2">
+                    <div class="contact-detail text-center">
+                        <div class="icon">
+                            <img src='{{url_for("static", filename="search.png")}}' style='width: 30px;'>
+                        </div>
+                        <div class="content mt-4">
+                            <h6 class="title text-uppercase font-weight-bold">Email</h6>
+                            <p class="text-muted">Drop us an email and we'll get back to you ASAP. We'll resolve it so don't wait around and stop refreshing.</p>
+                            <a href="mailto:simplyportfolio@example.com" class="text-primary">simplyportfolio@example.com</a>
+                        </div>  
+                    </div>
+                </div><!--end col-->
+                
+                <div class="col-md-4 mt-4 pt-2">
+                    <div class="contact-detail text-center">
+                        <div class="icon">
+                            <img src='{{url_for("static", filename="search.png")}}' style='width: 30px;'>
+                        </div>
+                        <div class="content mt-4">
+                            <h6 class="title text-uppercase font-weight-bold">Location</h6>
+                            <p class="text-muted">C/54 Northwest Freeway, Suite 558, <br>Houston, USA 485</p>
+                            <a href="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d6030.418742494061!2d-111.34563870463673!3d26.01036670629853!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2smx!4v1471908546569" class="video-play-icon text-primary">View on Google map</a>
+                        </div>  
+                    </div>
+                </div><!--end col-->
+            </div><!--end row-->
+        </div><!--end container-->            
+    </section><!--end section-->
+    <!-- End COntact -->
+
+    <!-- Start Footer -->
+    <footer class="bg-dark" style="margin-top: 200px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-md-12">
+                    <p class="mt-4" style="padding: 50px 50px 0px 50px;">Our Mission: To Get You Hired</p>
+                </div>
+                <div class="col-lg-7 col-12" style="margin-top: 50px;">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <h5 class="text-light">Landing</h5>
+                            <ul class="list-unstyled">
+                                <li><a href="#home" class="text-foot">Home</a></li>
+                                <li><a href="#features" class="text-foot">Features</a></li>
+                                <li><a href="#about" class="text-foot">About</a></li>
+                                <li><a href="#pricing" class="text-foot">Pricing</a></li>
+                                <li><a href="#contact" class="text-foot">Contact</a></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="col-lg-4">
+                            <h5 class="text-light">About</h5>
+                            <ul class="list-unstyled">
+                                <li><a href="#" class="text-foot">About us</a></li>
+                                <li><a href="#" class="text-foot">Contact us</a></li>
+                                <li><a href="#" class="text-foot">Terms & Services</a></li>
+                                <li><a href="#" class="text-foot">Privacy Policy</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <footer class="bg-dark footer-bar py-4">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 text-center">
+                    <p class="foot-color mb-0">© 2021 Simply Portfolio. Design with <i class="mdi mdi-heart text-danger"></i> Shreethemes.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- End Footer -->
+
+{% endblock %}

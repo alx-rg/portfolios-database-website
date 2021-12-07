@@ -3,31 +3,36 @@
 {% block content %}
 {% include 'partials/navuser.html' %}
 <div class="container mt-3">
-    <div class='d-flex'>
-      <h2 class="mb-4">{{ user.name }}</h2>
-    </div>
-    <h5>Username: {{ user.username }}</h5>
-    <h4>Total Donated: ${{ user.total_given}}</h4>
-
-
+  <div class='d-flex'>
+    <h2 class="mb-4">{{ user.name }}</h2>
+  </div>
+       
+  <div class="row row-cols-2 row-cols-2 row-cols-2 mt-2" style="border-top: 1px solid grey;">
+    <div class="col-12 col-lg-6">
+      <!-- PROJECTS MADE -->
+      <h4>Projects</h4>
+      <div class="row row-cols-2 row-cols-2 row-cols-2 mt-2" style='margin-top: 10px;'>
+        {% for project in projects %}
+            {% include 'partials/project.html' %}
+        {% endfor %}
         <div class='row-md-1' style="width: 40%; min-width: 450px; border-top: 1px solid grey;">
-            {% include 'partials/donation_form.html' %}
+          {% include 'partials/project_form.html' %}
         </div>  
-        
-        <div class="row row-cols-2 row-cols-2 row-cols-2 mt-2" style="border-top: 1px solid grey;">
-            <div class="col-12 col-lg-6">
-              <!-- DONATIONS MADE -->
-              <h4>Donations for {{ user.name }}</h4>
-              <div class="row row-cols-2 row-cols-2 row-cols-2 mt-2" style='margin-top: 10px;'>
-                {% for donation in donations %}
-                    {% include 'partials/donation.html' %}
-                {% endfor %}
-              </div>
-            </div>
-        </div>
+      </div>
     </div>
+  </div>
+  <div class="row row-cols-2 row-cols-2 row-cols-2 mt-2" style="border-top: 1px solid grey;">
+    <div class="col-12 col-lg-6">
+      <!-- ARTICLES MADE -->
+      <h4>Articles</h4>
+      <div class="row row-cols-2 row-cols-2 row-cols-2 mt-2" style='margin-top: 10px;'>
+        {% for article in articles %}
+            {% include 'partials/article.html' %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
 </div>
-
 
 {% endblock %}
 

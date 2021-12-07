@@ -1,12 +1,12 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<form method='POST' action='/donations'>
+<form method='POST' action='/articles'>
   
   <fieldset>
-    <legend>New donation</legend>    
+    <legend>New Article</legend>    
     <div class='form-group mb-1'>
-      <label for='charity'>Select Charity:</label><br>
+      <label for='charity'>Select Article:</label><br>
       <select name='charity' class='form-control'>
         <option>Smart Dogs</option>
         <option>Dog 4 Peace</option>
@@ -23,16 +23,8 @@
     </div>
   </fieldset>
   
-    <button type='submit' class='btn btn-success'>Upload Donation</button>
+    <button type='submit' class='btn btn-success'>Upload Article</button>
   
 </form>
 {% endblock %}
 
-<!--  
-  
-<input type ='hidden' value='{{ user._id }}' name='user_id'>
-
-<p>
-  <h2 class='card-title'>{{ user.username }}</h2>
-</p> 
--->

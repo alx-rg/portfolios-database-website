@@ -6,7 +6,7 @@
 # http://127.0.0.1:5000/
 # localhost:5000
 
-# MongoDB     brew services start mongodb-community@5.0     Verify that it's running with : brew services list
+# MongoDB   brew services start mongodb-community@5.0     Verify that it's running with : brew services list
 # to stop MongoDB brew services stop mongodb-community@5.0
 
 from flask import Flask, render_template, request, redirect, url_for
@@ -16,8 +16,10 @@ import os
 
 uri = os.environ.get('MONGODB_URI')
 client = MongoClient(uri)
-db = client.get_database('CharityTracker')
-donations = db.donations
+db = client.get_database('SimplyPortfolio')
+portfolio = db.portfolios
+project = db.projects
+article = db.articles
 
 app = Flask(__name__)
 
@@ -26,6 +28,10 @@ def users_index():
   #Show All users
   users = db.users.find({})
   return render_template('users_index.html', users=users)
+
+@app.route('/index')
+def index():
+  return render_template('index.html')
 
 @app.route('/users/new')
 def users_new():
@@ -48,8 +54,9 @@ def users_submit():
 @app.route('/users/<user_id>')
 def users_show(user_id):
   user = db.users.find_one({'_id': ObjectId(user_id)})
-  user_donations = donations.find({'user_id': ObjectId(user_id)})
-  return render_template('users_show.html', user=user, donations=user_donations) 
+  user_projects = project.find({'user_id': ObjectId(user_id)})
+  user_articles = article.find({'user_id': ObjectId(user_id)})
+  return render_template('users_show.html', user=user, project=user_projects, articles=user_articles) 
 
 @app.route('/users/<user_id>/edit')
 def users_edit(user_id):
@@ -73,44 +80,44 @@ def users_del(user_id):
     return redirect(url_for('users_index'))
 
 
-# NEW DONATION BELOW: --------------------------------------------------------------
+# NEW PROJECT BELOW: --------------------------------------------------------------
 
-@app.route('/users/donations', methods=['POST'])
-def donations_new():
-    """Submit a new donation"""
-    donation = {
-        'charity': request.form.get('charity'),
+@app.route('/users/project', methods=['POST'])
+def articles_new():
+    """Submit a new project"""
+    project = {
+        'title': request.form.get('title'),
         'date': request.form.get('date'), 
-        'amount': int(request.form.get('amount')),
+        'description': int(request.form.get('description')),
         'user_id': ObjectId(request.form.get('user_id')),
     }
-    donations.insert_one(donation)
+    project.insert_one(project)
     return redirect(url_for('users_show', user_id=request.form.get('user_id')))
 
-@app.route('/users/donations/<donations_id>', methods=['POST'])
-def donations_del(donations_id):
-    donations.delete_one({'_id': ObjectId(donations_id)})
+@app.route('/users/project/<articles_id>', methods=['POST'])
+def articles_del(articles_id):
+    project.delete_one({'_id': ObjectId(articles_id)})
     return redirect(url_for('users_show', user_id=request.form.get('user_id')))
 
-@app.route('/donations/new')
-def donation_new():
-  # Hidden Form element to add the donation to the user
-    return render_template('donations_new.html')
+@app.route('/project/new')
+def project_new():
+  # Hidden Form element to add the project to the user
+    return render_template('articles_new.html')
 
-@app.route('/donation_info', methods=["GET"])
-def donations_info(user_id):
+@app.route('/article_info', methods=["GET"])
+def articles_info(user_id):
     user = db.users.find_one({'_id': ObjectId(user_id)})
-    user_donations = donations.find({'user_id': ObjectId(user_id)})
-    donation_info_totals = donations.aggregate([{"$match": {"user_id": ObjectId(user_id)}},
+    user_projects = project.find({'user_id': ObjectId(user_id)})
+    article_info_totals = project.aggregate([{"$match": {"user_id": ObjectId(user_id)}},
                                                 {"$group": {"_id": None,
                                                             "total_given": {"$sum": "$amount"}}},
                                               ])
-    donation_info_list = list(donation_info_totals)
-    donation_info = donation_info_list[0] if len(donation_info_list) != 0 else None
-    return render_template("users_show.html", user=user, donations=user_donations, donation_info=donation_info)
+    article_info_list = list(article_info_totals)
+    article_info = article_info_list[0] if len(article_info_list) != 0 else None
+    return render_template("users_show.html", user=user, project=user_projects, article_info=article_info)
 
 
-#DONATION ABOVE: --------------------------------------------------------------    
+#PROJECT ABOVE: --------------------------------------------------------------    
 
 
 # turn the server on for servering
