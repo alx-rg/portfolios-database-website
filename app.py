@@ -17,7 +17,6 @@ import os
 uri = os.environ.get('MONGODB_URI')
 client = MongoClient(uri)
 db = client.get_database('SimplyPortfolio')
-portfolio = db.portfolios
 project = db.projects
 article = db.articles
 
@@ -36,8 +35,10 @@ def index():
 @app.route('/users/new')
 def users_new():
   user = {
-    'username': "",
     'name': "",
+    'company': "",
+    'position': "",
+    'bio': "",
   }
   return render_template('users_new.html', user=user, title='New User')
 
@@ -45,8 +46,10 @@ def users_new():
 def users_submit():
     """Submit a new user."""
     user = {
-        'username': request.form.get('username'),
         'name': request.form.get('name'),
+        'company': request.form.get('company'),
+        'position': request.form.get('position'),
+        'bio': request.form.get('bio'),
     }
     db.users.insert_one(user)
     return redirect(url_for('users_index'))
@@ -66,8 +69,10 @@ def users_edit(user_id):
 @app.route('/users/<user_id>', methods=['POST'])
 def users_update(user_id):
     updated_user = {
-        'username': request.form.get('username'),
         'name': request.form.get('name'),
+        'company': request.form.get('company'),
+        'position': request.form.get('position'),
+        'bio': request.form.get('bio'),
     }
     db.users.update_one(
         {'_id': ObjectId(user_id)},
@@ -83,26 +88,27 @@ def users_del(user_id):
 # NEW PROJECT BELOW: --------------------------------------------------------------
 
 @app.route('/users/project', methods=['POST'])
-def articles_new():
+def projects_new():
     """Submit a new project"""
     project = {
         'title': request.form.get('title'),
         'date': request.form.get('date'), 
         'description': int(request.form.get('description')),
+        'link': int(request.form.get('link')),
         'user_id': ObjectId(request.form.get('user_id')),
     }
     project.insert_one(project)
     return redirect(url_for('users_show', user_id=request.form.get('user_id')))
 
-@app.route('/users/project/<articles_id>', methods=['POST'])
-def articles_del(articles_id):
-    project.delete_one({'_id': ObjectId(articles_id)})
+@app.route('/users/project/<projects_id>', methods=['POST'])
+def articles_del(projects_id):
+    project.delete_one({'_id': ObjectId(projects_id)})
     return redirect(url_for('users_show', user_id=request.form.get('user_id')))
 
 @app.route('/project/new')
 def project_new():
   # Hidden Form element to add the project to the user
-    return render_template('articles_new.html')
+    return render_template('projects_new.html')
 
 @app.route('/article_info', methods=["GET"])
 def articles_info(user_id):
@@ -118,6 +124,30 @@ def articles_info(user_id):
 
 
 #PROJECT ABOVE: --------------------------------------------------------------    
+
+@app.route('/users/article', methods=['POST'])
+def articles_new():
+    """Submit a new article"""
+    article = {
+        'title': request.form.get('title'),
+        'date': request.form.get('date'), 
+        'description': int(request.form.get('description')),
+        'link': int(request.form.get('link')),
+        'user_id': ObjectId(request.form.get('user_id')),
+    }
+    article.insert_one(article)
+    return redirect(url_for('users_show', user_id=request.form.get('user_id')))
+
+# @app.route('/users/article/<articles_id>', methods=['POST'])
+# def articles_del(articles_id):
+#     article.delete_one({'_id': ObjectId(articles_id)})
+#     return redirect(url_for('users_show', user_id=request.form.get('user_id')))
+
+@app.route('/article/new')
+def article_new():
+  # Hidden Form element to add the project to the user
+    return render_template('articles_new.html')
+
 
 
 # turn the server on for servering

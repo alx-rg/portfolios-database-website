@@ -2,19 +2,33 @@
 {% block content %}
 
 <fieldset>
-  <legend>{{ title }}</legend>
-   <!-- TITLE -->
-   <div class='form-group'>
-       <label for='users-username'>User Email</label><br>
-       <input class='form-control' id='users-username' type='text' name='username' value='{{ user.username }}'/>
-   </div>
+  <legend style="margin-top: 50px;">{{ title }}</legend>
+    <!-- TITLE -->
+    <div class='form-group'>
+       <label for='users-name'>Full Name</label><br>
+       <input class='form-control' id='name' type='text' name='name' value='{{ user.name }}'placeholder="What should we call you?"required/>
+    </div>
 
-   <!-- NAME -->
-   <div class='form-group'>
-       <label for='name'>Full Name</label><br>
-       <input class='form-control' id='name' type='text' name='name' value='{{ user.name }}' />
-   </div>
+    <!-- Position -->
+    <div class='form-group'>
+        <label for='users-company'>Company Applying To:</label><br>
+        <input class='form-control' id='company' type='text' name='company' value='{{ user.company }}' placeholder="Unicorn or Spotify?" required/>
+    </div>
+
+
+   <!-- Position -->
+    <div class='form-group'>
+       <label for='users-position'>Position Applied For:</label><br>
+       <input class='form-control' id='position' type='text' name='position' value='{{ user.position }}' placeholder="WebDev? Bartender?" required/>
+    </div>
    
+    <!-- Bio -->
+    <div class='form-group'>
+        <label for='users-bio'>Short Bio:</label><br>
+        <input class='form-control' id='bio' type='text' name='bio' value='{{ user.bio }}' 
+            maxlength="140" placeholder="Short Bio of 140 characters" required />
+    </div>
+
 </fieldset>
 
 
