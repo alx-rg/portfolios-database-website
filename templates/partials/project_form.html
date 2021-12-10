@@ -3,7 +3,7 @@
 <form method='POST' action='/users/projects'>
 <input type ='hidden' value='{{ user._id }}' name='user_id'>
   <fieldset>
-    <legend>New Project for {{user.username}} </legend>    
+    <legend>New Project for {{user.name}} </legend>    
     <div class='form-group mb-1'>    
       <label for='title'>Title: </label><br>
       <input type='text' id='text' name='text' class='form-control' maxlength='100' placeholder='100 Char Max -> Project Title' required>
@@ -18,5 +18,5 @@
     </div>
   </fieldset>
 
-  <button type='submit' class='btn btn-success'>Upload Article</button>
+  <button type='submit' class='btn btn-success'>Upload Project</button>
 </form>

@@ -17,8 +17,8 @@ import os
 uri = os.environ.get('MONGODB_URI')
 client = MongoClient(uri)
 db = client.get_database('SimplyPortfolio')
-project = db.projects
-article = db.articles
+projects = db.projects
+articles = db.articles
 
 app = Flask(__name__)
 
@@ -57,8 +57,8 @@ def users_submit():
 @app.route('/users/<user_id>')
 def users_show(user_id):
   user = db.users.find_one({'_id': ObjectId(user_id)})
-  user_projects = project.find({'user_id': ObjectId(user_id)})
-  user_articles = article.find({'user_id': ObjectId(user_id)})
+  user_projects = projects.find({'user_id': ObjectId(user_id)})
+  user_articles = articles.find({'user_id': ObjectId(user_id)})
   return render_template('users_show.html', user=user, project=user_projects, articles=user_articles) 
 
 @app.route('/users/<user_id>/edit')
@@ -97,12 +97,12 @@ def projects_new():
         'link': int(request.form.get('link')),
         'user_id': ObjectId(request.form.get('user_id')),
     }
-    project.insert_one(project)
+    projects.insert_one(project)
     return redirect(url_for('users_show', user_id=request.form.get('user_id')))
 
 @app.route('/users/project/<projects_id>', methods=['POST'])
 def articles_del(projects_id):
-    project.delete_one({'_id': ObjectId(projects_id)})
+    projects.delete_one({'_id': ObjectId(projects_id)})
     return redirect(url_for('users_show', user_id=request.form.get('user_id')))
 
 @app.route('/project/new')
@@ -113,8 +113,8 @@ def project_new():
 @app.route('/article_info', methods=["GET"])
 def articles_info(user_id):
     user = db.users.find_one({'_id': ObjectId(user_id)})
-    user_projects = project.find({'user_id': ObjectId(user_id)})
-    article_info_totals = project.aggregate([{"$match": {"user_id": ObjectId(user_id)}},
+    user_projects = projects.find({'user_id': ObjectId(user_id)})
+    article_info_totals = projects.aggregate([{"$match": {"user_id": ObjectId(user_id)}},
                                                 {"$group": {"_id": None,
                                                             "total_given": {"$sum": "$amount"}}},
                                               ])
@@ -135,12 +135,12 @@ def articles_new():
         'link': int(request.form.get('link')),
         'user_id': ObjectId(request.form.get('user_id')),
     }
-    article.insert_one(article)
+    articles.insert_one(article)
     return redirect(url_for('users_show', user_id=request.form.get('user_id')))
 
 # @app.route('/users/article/<articles_id>', methods=['POST'])
 # def articles_del(articles_id):
-#     article.delete_one({'_id': ObjectId(articles_id)})
+#     articles.delete_one({'_id': ObjectId(articles_id)})
 #     return redirect(url_for('users_show', user_id=request.form.get('user_id')))
 
 @app.route('/article/new')

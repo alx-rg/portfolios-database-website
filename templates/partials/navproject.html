@@ -1,0 +1,19 @@
+<!-- templates/partials/navproject.html -->
+
+<nav style="background-color: white; margin-top: 10px;">
+
+  <div>
+      <div class='btn-group'>
+      <p style="margin-top: 1px;">/</p>
+      <form action='/users/{{ user._id }}/edit' style='margin-right: 10px;'>
+          <button class='badge bg-secondary' type='submit'style="border: white;">Edit</button>
+      </form>
+      <p style="margin-top: 1px;">/</p>
+      <form method='POST' action='/users/{{user._id}}/delete' onclick="return confirm('Are you sure you want to delete this User?')">
+          <button class='badge bg-secondary' type='submit' style="border: white;">Delete</button>
+      </form>
+      <p style="margin-top: 1px;">/</p> 
+      </div>
+  </div>
+</nav>
+
