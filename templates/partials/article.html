@@ -4,6 +4,12 @@
       <h4>&nbsp;{{ article.name }}</h4>
       <h5>&nbsp;${{ article.description }}</h5>
       <p>&nbsp;{{ article.date }}</p>
+      <p style="margin-top: 1px;">/</p>
+      <form method='POST' action="{{ url_for('articles_del', articles_id=article._id) }}" onclick="return confirm('Are you sure you want to delete this Article?')">
+      <input type ='hidden' value='{{ user._id }}' name='user_id'>
+      <button class='badge bg-secondary' type='submit' style="border: white;">Delete</button>
+      </form>
+      <p style="margin-top: 1px;">/</p>
       <div class='col-1'><form method='POST' action='/users/articles/{{ article._id }}'>
         <input type='hidden' value='{{ user._id }}' name='user_id'/>
         <button class='badge rounded-pill bg-danger' type='submit' onclick="return confirm('Delete article?')">Delete</button>

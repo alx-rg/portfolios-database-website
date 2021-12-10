@@ -1,12 +1,12 @@
 
 
-<form method='POST' action='/users/projects'>
+<form action="{{ url_for('projects_new') }}" method='POST'>
 <input type ='hidden' value='{{ user._id }}' name='user_id'>
   <fieldset>
     <legend>New Project for {{user.name}} </legend>    
     <div class='form-group mb-1'>    
       <label for='title'>Title: </label><br>
-      <input type='text' id='text' name='text' class='form-control' maxlength='100' placeholder='100 Char Max -> Project Title' required>
+      <input type='text' id='text' name='title' class='form-control' maxlength='40' placeholder='Project Title -> 40 Max Characters - Short is Sweet' required>
     </div>
     <div class='form-group mb-1'>
       <label for='date'>Date</label>
@@ -14,9 +14,13 @@
     </div>
     <div class='form-group mb-1'>    
       <label for='description'>Description: </label><br>
-      <input type='text' id='text' name='text' class='form-control' maxlength='140' placeholder='Max Characters = 140 -> Project Description' required>
+      <input type='text' id='text' name='description' class='form-control' maxlength='280' placeholder='Project Description -> Max Characters = 280(brief like Twitter)' required>
+    </div>
+    <div class='form-group mb-1'>    
+      <label for='link'>Link: </label><br>
+      <input type='text' id='text' name='link' class='form-control' placeholder='Be Smart - Use a URL Shortner' required>
     </div>
   </fieldset>
 
-  <button type='submit' class='btn btn-success'>Upload Project</button>
+  <button type='submit' class='btn btn-outline-primary'>Upload Project</button>
 </form>

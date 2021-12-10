@@ -59,7 +59,7 @@ def users_show(user_id):
   user = db.users.find_one({'_id': ObjectId(user_id)})
   user_projects = projects.find({'user_id': ObjectId(user_id)})
   user_articles = articles.find({'user_id': ObjectId(user_id)})
-  return render_template('users_show.html', user=user, project=user_projects, articles=user_articles) 
+  return render_template('users_show.html', user=user, projects=user_projects, articles=user_articles) 
 
 @app.route('/users/<user_id>/edit')
 def users_edit(user_id):
@@ -90,18 +90,20 @@ def users_del(user_id):
 @app.route('/users/project', methods=['POST'])
 def projects_new():
     """Submit a new project"""
+    
     project = {
         'title': request.form.get('title'),
         'date': request.form.get('date'), 
-        'description': int(request.form.get('description')),
-        'link': int(request.form.get('link')),
+        'description': request.form.get('description'),
+        'link': request.form.get('link'),
         'user_id': ObjectId(request.form.get('user_id')),
     }
     projects.insert_one(project)
+    print(project)
     return redirect(url_for('users_show', user_id=request.form.get('user_id')))
 
 @app.route('/users/project/<projects_id>', methods=['POST'])
-def articles_del(projects_id):
+def projects_del(projects_id):
     projects.delete_one({'_id': ObjectId(projects_id)})
     return redirect(url_for('users_show', user_id=request.form.get('user_id')))
 
@@ -125,28 +127,28 @@ def articles_info(user_id):
 
 #PROJECT ABOVE: --------------------------------------------------------------    
 
-@app.route('/users/article', methods=['POST'])
+@app.route('/users/articles', methods=['POST'])
 def articles_new():
     """Submit a new article"""
     article = {
         'title': request.form.get('title'),
         'date': request.form.get('date'), 
-        'description': int(request.form.get('description')),
-        'link': int(request.form.get('link')),
+        'description': request.form.get('description'),
+        'link': request.form.get('link'),
         'user_id': ObjectId(request.form.get('user_id')),
     }
     articles.insert_one(article)
     return redirect(url_for('users_show', user_id=request.form.get('user_id')))
 
-# @app.route('/users/article/<articles_id>', methods=['POST'])
-# def articles_del(articles_id):
-#     articles.delete_one({'_id': ObjectId(articles_id)})
-#     return redirect(url_for('users_show', user_id=request.form.get('user_id')))
+@app.route('/users/artile/<articles_id>', methods=['POST'])
+def articles_del(articles_id):
+    articles.delete_one({'_id': ObjectId(articles_id)})
+    return redirect(url_for('users_show', user_id=request.form.get('user_id')))
 
 @app.route('/article/new')
 def article_new():
   # Hidden Form element to add the project to the user
-    return render_template('articles_new.html')
+    return render_template('articles_new.html', title='New Article')
 
 
 

@@ -1,20 +1,32 @@
-<!-- templates/partials/portfolios_form.html -->
+<!-- templates/partials/articles_form.html -->
 {% block content %}
-
+<form action="{{ url_for('articles_new') }}" method='POST' >
+    <input type ='hidden' value='{{ user._id }}' name='user_id'>
 <fieldset>
   <legend>{{ title }}</legend>
    <!-- TITLE -->
    <div class='form-group'>
-       <label for='users-username'>Portfolio/Position</label><br>
-       <input class='form-control' id='users-username' type='text' name='username' value='{{ user.username }}'/>
+       <label for='title'>Title of Article</label><br>
+       <input class='form-control' id='title' type='text' name='title'/>
    </div>
-
-   <!-- NAME -->
+   <!-- Date -->
    <div class='form-group'>
-       <label for='name'>Applying to which company?</label><br>
-       <input class='form-control' id='name' type='text' name='name' value='{{ user.name }}' />
+       <label for='date'>Date Article Was Pusblished</label><br>
+       <input class='form-control' id='date' type='date' name='date'/>
    </div>
+    <!-- Description -->
+    <div class='form-group'>
+        <label for='description'>Description of Article (short)</label><br>
+        <input class='form-control' id='description' type='text' name='description'/>
+    </div>
+       <!-- Link -->
+    <div class='form-group'>
+        <label for='link'>Link to Article (Silly!)</label><br>
+        <input class='form-control' id='link' type='text' name='link' />
+    </div>
    
+    <button type='submit' class='btn btn-success'>Upload Article</button>
+
 </fieldset>
 
 
