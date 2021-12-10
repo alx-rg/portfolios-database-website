@@ -20,15 +20,10 @@
       <form method='POST' action='/users/{{user._id}}/delete' onclick="return confirm('Are you sure you want to delete this User?')">
           <button class='btn btn-secondary' type='submit'>Delete</button>
       </form>
+      <p style="margin-top: 11px;">/</p>      
+        <button class='btn btn-secondary' type='submit'><a href="#new" style="text-decoration: none;">New Project</a></button>
       <p style="margin-top: 11px;">/</p>
-      <form action='/article/{{user._id}}/new'>
-          <button class='btn btn-secondary' type='submit' href="#new"> New Project</button>
-      </form>
-      <p style="margin-top: 11px;">/</p>
-      <form action='/article/{{user._id}}/new'>
-          <button class='btn btn-secondary' type='submit' href="#new">New Article</button>
-      </form>
-
+        <button class='btn btn-secondary' type='submit'><a href="#new" style="text-decoration: none;">New Article</a></button>      
       </div>
   </div>
 </nav>

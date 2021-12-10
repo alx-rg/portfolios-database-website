@@ -6,7 +6,9 @@
       <p class='card-title text-muted' style="margin-left: 10px;">Created on : {{ project.date }}</p>
     </div>
     <h6>&nbsp;${{ project.description }}</h6>
-    <p class='card-title text-muted'>&nbsp;{{ project.link }}</p>
+    <div class="mt-3">
+      <a href='{{ project.link }}' class="text-primary">Read More</a>
+    </div>
     <div class='btn-group'>
       <!-- <p style="margin-top: 1px;">/</p>
       <form action='/users/{{ user._id }}/edit' style='margin-right: 10px;'>
