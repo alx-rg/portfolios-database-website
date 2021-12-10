@@ -3,29 +3,29 @@
 <form action="{{ url_for('articles_new') }}" method='POST' >
     <input type ='hidden' value='{{ user._id }}' name='user_id'>
 <fieldset>
-  <legend>{{ title }}</legend>
+    <legend>New Article</legend>  
    <!-- TITLE -->
-   <div class='form-group'>
-       <label for='title'>Title of Article</label><br>
+   <div class='form-group mb-1'>
+       <label for='title'>Title of Article:</label><br>
        <input class='form-control' id='title' type='text' name='title'/>
    </div>
    <!-- Date -->
-   <div class='form-group'>
-       <label for='date'>Date Article Was Pusblished</label><br>
-       <input class='form-control' id='date' type='date' name='date'/>
+   <div class='form-group mb-1'>
+       <label for='date'>Date Article Was Published:</label><br>
+       <input class='form-control' id='date' type='date' name='date' required/>
    </div>
     <!-- Description -->
-    <div class='form-group'>
-        <label for='description'>Description of Article (short)</label><br>
-        <input class='form-control' id='description' type='text' name='description'/>
+    <div class='form-group mb-1'>
+        <label for='description'>Description of Article:</label><br>
+        <input class='form-control' id='description' type='text' name='description' maxlength='280' placeholder='Article Description -> Max Characters = 280' required />
     </div>
        <!-- Link -->
     <div class='form-group'>
-        <label for='link'>Link to Article (Silly!)</label><br>
-        <input class='form-control' id='link' type='text' name='link' />
+        <label for='link'>Link to Article:</label><br>
+        <input class='form-control' id='link' type='text' name='link' placeholder='Use short Link' required />
     </div>
    
-    <button type='submit' class='btn btn-success'>Upload Article</button>
+    <button type='submit' class='btn btn-outline-primary'>Upload Article</button>
 
 </fieldset>
 

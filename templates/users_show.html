@@ -14,7 +14,7 @@
   <div class="row row-cols-2 row-cols-2 row-cols-2 mt-2" style="border-top: 1px solid grey;">
     <div class="col-12">
       <!-- PROJECTS MADE -->
-      <h4 class="row mt-2">Projects</h4>
+      <h4 class="row mt-2"style="margin-top ">Projects</h4>
       
       <div class="text-left col-lg-12">
         <p class="text-muted para-desc mx-auto mb-0">The projects I dedicated hours and hours of my life because the steaks were high. Now relegated to the dust bins of history. 
@@ -24,29 +24,52 @@
         {% for project in projects %}
             {% include 'partials/project.html' %}
         {% endfor %}
-        
-    
     </div>
   </div>
-  <div class="row row-cols-2 row-cols-2 row-cols-2 mt-2" style="border-top: 1px solid grey;">
-    <div class="col-12">
-      <!-- ARTICLES MADE -->
-      <h4 class="row mt-2 ">Articles</h4>
-      <div class="text-left col-lg-4">
-        <p class="text-muted para-desc mx-auto mb-0">A few of the articles I wrote have a penchant for Architecture and Design. Here's a selection of favorites to take a look @ and enjoy the beautiful prose coursing through my fingertips.</p>
-      </div>
-      <div class="row row-cols-2 row-cols-2 row-cols-2 mt-2" style='margin-top: 10px;'>
+
+  <!-- Articles Start -->
+  <section class="section" id="article" >
+    <div class="container" style="border-top: 1px solid grey;">
+      <h4 class="row mt-2"style="margin-top ">Articles</h4>
+        <div class="row justify-content-center" style='margin-top: 10px;'>
+          
+            <div class="col-12">
+                <div class="section-title text-left mb-4 pb-2">
+                    <p class="text-muted mx-auto mb-0">A few of the articles I wrote have a penchant for Architecture and Design. Here's a selection of favorites to take a look @ and enjoy the beautiful prose coursing through my fingertips.</p>
+                </div>
+            </div><!--end col-->
+        </div><!--end row-->
+  
+        <div class="row">   
+               
         {% for article in articles %}
-            {% include 'partials/article.html' %}
-        {% endfor %}     
-      </div>
-      <div class="row row-cols-2 row-cols-2 row-cols-2 mt-2" style='margin-top: 10px;' id="new">
-        {% include 'partials/project_form.html' %}
-        {% include 'partials/article_form.html' %} 
-      </div>
+        {% include 'partials/article.html' %}
+        {% endfor %}  
+             
+        </div><!--end row-->
+        
+        
+    </div><!--end container-->
+    <div>
+      <button type="button" class="btn btn-outline-light">Easter Egg!</button>
     </div>
+    <div class="row row-cols-2 row-cols-2 row-cols-2 mt-2" style='border-top: 1px solid grey; margin: 20px;border-bottom: 1px solid grey; margin: 20px;' id="new">
+      {% include 'partials/project_form.html' %}
+      {% include 'partials/article_form.html' %} 
+    </div>
+  </section>
+  <!-- Articles End -->
+
+
+  <div class="row row-cols-2 row-cols-2 row-cols-2 mt-2" style="border-top: 1px solid grey; margin-left: 10px; margin-right: 10px;">
+    <p>Simply Portfolio</p>
+
   </div>
+
+
 </div>
 
 {% endblock %}
+
+
 

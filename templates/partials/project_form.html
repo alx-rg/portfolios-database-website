@@ -1,26 +1,27 @@
 
 
-<form action="{{ url_for('projects_new') }}" method='POST'>
+<form action="{{ url_for('projects_new') }}" method='POST' style="background-color: rgb(57, 57, 57); color: rgb(240, 240, 240);"> 
 <input type ='hidden' value='{{ user._id }}' name='user_id'>
-  <fieldset>
-    <legend>New Project for {{user.name}} </legend>    
+  <fieldset >
+    <legend>New Project</legend>    
     <div class='form-group mb-1'>    
-      <label for='title'>Title: </label><br>
+      <label for='title'>Title of Project: </label><br>
       <input type='text' id='text' name='title' class='form-control' maxlength='40' placeholder='Project Title -> 40 Max Characters - Short is Sweet' required>
     </div>
     <div class='form-group mb-1'>
-      <label for='date'>Date</label>
+      <label for='date'>Date Published Online:</label>
       <input type='date' id='date' name='date' class='form-control' required>
     </div>
     <div class='form-group mb-1'>    
-      <label for='description'>Description: </label><br>
+      <label for='description'>Project Description:</label><br>
       <input type='text' id='text' name='description' class='form-control' maxlength='280' placeholder='Project Description -> Max Characters = 280(brief like Twitter)' required>
     </div>
-    <div class='form-group mb-1'>    
-      <label for='link'>Link: </label><br>
+    <div class='form-group'>    
+      <label for='link'>Link to Project: </label><br>
       <input type='text' id='text' name='link' class='form-control' placeholder='Be Smart - Use a URL Shortner' required>
     </div>
   </fieldset>
 
-  <button type='submit' class='btn btn-outline-primary'>Upload Project</button>
+  <button type='submit' class='btn btn-secondary'>Upload Project</button>
+  <p style="font-size: 10px; margin: 0px ; color: rgb(57, 57, 57);">.</p>
 </form>
