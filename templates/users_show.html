@@ -11,13 +11,13 @@
     <div style="display:flex;"><p class='card-title text-muted' style="margin-right: 10px;">Position Applying to:</p><p class='text-primary'>{{ user.position }} </p></div>  
      <p class="text-muted col-lg-12">Short Bio: {{ user.bio }}</p>
   </div>    
-  <div class="row row-cols-2 row-cols-2 row-cols-2 mt-2" style="border-top: 1px solid grey;">
+  <div class="row row-cols-2 row-cols-2 row-cols-2 mt-2" style="border-top: 1px solid grey;" >
     <div class="col-12">
-      <!-- PROJECTS MADE -->
-      <h4 class="row mt-2"style="margin-top ">Projects</h4>
+      <!-- PROJECTS Start -->
+      <h4 class="row mt-2"style="margin-top" id="project">Projects</h4>
       
       <div class="text-left col-lg-12">
-        <p class="text-muted para-desc mx-auto mb-0">The projects I dedicated hours and hours of my life because the steaks were high. Now relegated to the dust bins of history. 
+        <p class="text-muted para-desc mx-auto mb-0">Eventually the User will write a fascinating piece about how all these projects tie together. But For now: The projects I dedicated hours and hours of my life because the steaks were high. Now relegated to the dust bins of history. 
             Please oh pretty please take a look at my beautiful work and hire me to create what will become the masterpiece of the digital era! 
             Let's say you run a cow-milking user experience website?.. Odd but okay.. NO PROBLEM! I'll make it amazing you udder-ly wont believe your eyes! You give me a job, I stop the buns.</p>
       </div>   
@@ -26,19 +26,19 @@
         {% endfor %}
     </div>
   </div>
-
+  <!-- PROJECTS End -->
   <!-- Articles Start -->
-  <section class="section" id="article" >
+  <section class="section" id="article" id="article">
     <div class="container" style="border-top: 1px solid grey;">
       <h4 class="row mt-2"style="margin-top ">Articles</h4>
         <div class="row justify-content-center" style='margin-top: 10px;'>
           
             <div class="col-12">
                 <div class="section-title text-left mb-4 pb-2">
-                    <p class="text-muted mx-auto mb-0">A few of the articles I wrote have a penchant for Architecture and Design. Here's a selection of favorites to take a look @ and enjoy the beautiful prose coursing through my fingertips.</p>
+                    <p class="text-muted mx-auto mb-0">Article Overview where the user will enter the thread, threading these articles.. or not? Otherwise a placeholder: A few of the articles I wrote have a penchant for Architecture and Design. Here's a selection of favorites to take a look @ and enjoy the beautiful prose coursing through my fingertips.</p>
                 </div>
-            </div><!--end col-->
-        </div><!--end row-->
+            </div>
+        </div>
   
         <div class="row">   
                
@@ -46,10 +46,10 @@
         {% include 'partials/article.html' %}
         {% endfor %}  
              
-        </div><!--end row-->
+        </div>
         
         
-    </div><!--end container-->
+    </div>
     <div>
       <button type="button" class="btn btn-outline-light">Easter Egg!</button>
     </div>

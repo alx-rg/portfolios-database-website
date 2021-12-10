@@ -3,13 +3,13 @@
 
 <fieldset>
   <legend style="margin-top: 50px;">{{ title }}</legend>
-    <!-- TITLE -->
+    <!-- Full Name -->
     <div class='form-group'>
        <label for='users-name'>Full Name</label><br>
        <input class='form-control' id='name' type='text' name='name' value='{{ user.name }}'placeholder="What should we call you?"required/>
     </div>
 
-    <!-- Position -->
+    <!-- Company -->
     <div class='form-group'>
         <label for='users-company'>Company Applying To:</label><br>
         <input class='form-control' id='company' type='text' name='company' value='{{ user.company }}' placeholder="Unicorn or Spotify?" required/>
@@ -18,7 +18,7 @@
 
    <!-- Position -->
     <div class='form-group'>
-       <label for='users-position'>Position Applied For:</label><br>
+       <label for='users-position'>Position Applying For:</label><br>
        <input class='form-control' id='position' type='text' name='position' value='{{ user.position }}' placeholder="WebDev? Bartender?" required/>
     </div>
    

@@ -3,32 +3,23 @@ Professional CS/ENG portfolios are just too complicated and take too long to rea
 
 ## How To Use:
 Either visit the website: 
-[Heroku Link](http://simple-portfolio-arg.herokuapp.com/)
+[Heroku Link to Simply Portfolio](https://simplyportfolio.herokuapp.com/index)
+
 Or download code.
-
-### Wireframe:
-![Main Dashboard](INFO/.png)
-![User Page](INFO/.png)
-
-### ERD:
-
-![ERD](INFO/.png)
 
 ### Actions:
 - View basic info for users who have a portfolio in a Dashboard
 - Create new User Accounts
 - Edit/Update User Accounts
 - Delete User Accounts
-- Create Portfolios
-- Delete Portoflios
+- Create Projects
+- Delete Projects
 - Create Articles
 - Delete Articles
 - Create / link Github projects
-- Delete Links
 
 ## Programming Languages Used:
 - Python
 - Flask
 - MongoDB
 
-Built as part of our final project in our ACS 1710 class

@@ -3,7 +3,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <!-- Services Start -->
+    <!-- DASHBOARD Start -->
     <section class="section" style="min-height: 75vh;" id="features">
         <div class="container">
             <div class="row justify-content-center" style='margin-top: 100px;'>
@@ -12,8 +12,8 @@
                         <h4 class="title mb-4">Current Users</h4>
                         <p class="text-muted mx-auto mb-0">As stated above, below you'll find a collection of users and their portfolios.</p>
                     </div>
-                </div><!--end col-->
-            </div><!--end row-->
+                </div>
+            </div>
             
             <div class="row" >
                 {% for user in users %}
@@ -37,11 +37,11 @@
                             </div>                            
                         </div>
                     </div>
-                </div><!--end col-->   
+                </div>  
                 {% endfor %}                     
-            </div><!--end row-->
+            </div>
             
-        </div><!--end container-->
+        </div>
         </section>
-        <!-- Services End -->
+        <!-- DASHBOARD End -->
 {% endblock %}

@@ -5,7 +5,6 @@
 # export FLASK_ENV=development; flask run
 # http://127.0.0.1:5000/
 # localhost:5000
-
 # MongoDB   brew services start mongodb-community@5.0     Verify that it's running with : brew services list
 # to stop MongoDB brew services stop mongodb-community@5.0
 
@@ -24,7 +23,6 @@ app = Flask(__name__)
 
 @app.route('/')
 def users_index():
-  #Show All users
   users = db.users.find({})
   return render_template('users_index.html', users=users)
 
@@ -112,20 +110,10 @@ def project_new():
   # Hidden Form element to add the project to the user
     return render_template('projects_new.html')
 
-@app.route('/article_info', methods=["GET"])
-def articles_info(user_id):
-    user = db.users.find_one({'_id': ObjectId(user_id)})
-    user_projects = projects.find({'user_id': ObjectId(user_id)})
-    article_info_totals = projects.aggregate([{"$match": {"user_id": ObjectId(user_id)}},
-                                                {"$group": {"_id": None,
-                                                            "total_given": {"$sum": "$amount"}}},
-                                              ])
-    article_info_list = list(article_info_totals)
-    article_info = article_info_list[0] if len(article_info_list) != 0 else None
-    return render_template("users_show.html", user=user, project=user_projects, article_info=article_info)
-
 
 #PROJECT ABOVE: --------------------------------------------------------------    
+
+#ARTICLE BELOW: --------------------------------------------------------------    
 
 @app.route('/users/articles', methods=['POST'])
 def articles_new():
@@ -150,6 +138,7 @@ def article_new():
   # Hidden Form element to add the project to the user
     return render_template('articles_new.html', title='New Article')
 
+#ARTICLE ABOVE: --------------------------------------------------------------    
 
 
 # turn the server on for servering
