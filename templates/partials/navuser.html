@@ -21,11 +21,38 @@
           <button class='btn btn-secondary' type='submit'>Delete</button>
       </form>
       <p style="margin-top: 11px;">/</p>      
-        <button class='btn btn-secondary' type='submit'><a href="#new" style="text-decoration: none;">New Project</a></button>
+        <button class='btn btn-secondary' type='submit' data-toggle="modal" ><a href="#new" style="text-decoration: none;">New Project</a></button>
       <p style="margin-top: 11px;">/</p>
-        <button class='btn btn-secondary' type='submit'><a href="#new" style="text-decoration: none;">New Article</a></button>      
+        <button class='btn btn-secondary' type="button" data-toggle="modal" data-target="#article">New Article</button>      
         <p style="margin-top: 11px;">/</p>  
-    </div>
+    </div> 
+    
+    
+    
+      <!-- Modal -->
+      <div class="modal fade" id="article" role="dialog">
+        <div class="modal-dialog">        
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">New Article Goes In BELOW! 👇 </h4>              
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+              <p>{% include 'partials/article_form.html' %} </p>
+            </div>
+            <div class='btn-group' style="border-top: 1px solid lightgrey;">
+              <div>
+                <button class='badge bg-secondary' type='button' style="border: white;" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>          
+        </div>
+      </div>
+    
+      
+
+
   </div>
 </nav>
 
